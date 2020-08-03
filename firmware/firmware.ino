@@ -1,4 +1,4 @@
-/*
+  /*
 Copyright 2018 <Pierre Constantineau, Julian Komaromy>
 
 3-Clause BSD License

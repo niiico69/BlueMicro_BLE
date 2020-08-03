@@ -73,6 +73,17 @@ pinMode(VCC_ENABLE_GPIO, OUTPUT);
 digitalWrite(VCC_ENABLE_GPIO, HIGH); 
 #endif
 
+#ifdef VCC_ENABLE_GPIO_LOW
+pinMode(VCC_ENABLE_GPIO_LOW, OUTPUT);
+digitalWrite(VCC_ENABLE_GPIO_LOW, LOW);
+#endif
+
+#ifdef CHARGER_ENABLE_GPIO_LOW
+pinMode(CHARGER_ENABLE_GPIO_LOW, OUTPUT);
+digitalWrite(CHARGER_ENABLE_GPIO_LOW, LOW);
+#endif
+
+
 oled.begin(1);
 
   LOG_LV1("BLEMIC","Starting %s" ,DEVICE_NAME);
