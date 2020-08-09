@@ -145,7 +145,7 @@ uint32_t Battery::analogReadVDDH()
 #endif
 /**************************************************************************************************************************/
 uint32_t Battery::readVBAT(void) {
-  //analogReference(AR_INTERNAL_3_0); // Set the analog reference to 3.0V (default = 3.6V)
+  analogReference(AR_INTERNAL_3_0); // Set the analog reference to 3.0V (default = 3.6V)
   analogReadResolution(12);         // Set the resolution to 12-bit (0..4095) // Can be 8, 10, 12 or 14
   delay(1);                         // Let the ADC settle  OK since we are calling this from the long term monitoring loop
   vbat_raw = analogRead(VBAT_PIN);       // Get the raw 12-bit, 0..3000mV ADC value
@@ -153,7 +153,7 @@ uint32_t Battery::readVBAT(void) {
   analogReadResolution(10);         // Set the ADC back to the default settings - just in case we use it somewhere else
 
 #ifdef BATTERY_R1
-  return vbat_raw * (BATTERY_R1 + BATTERY_R2) / BATTERY_R2;
+  return vbat_raw;// * (BATTERY_R1 + BATTERY_R2) / BATTERY_R2;
 #else
   return vbat_raw;
 #endif
@@ -240,4 +240,3 @@ uint32_t Battery::vbat_vdd = 0;
 uint32_t Battery::vbat_vddh = 0;
 uint8_t Battery::vbat_per = 0;
 uint8_t Battery::batt_type = BATT_UNKNOWN;
-

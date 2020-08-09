@@ -322,6 +322,61 @@ This makes it simpler to migrate from the Arduino Pro Micro to the BlueMicro.
         #define B6      43 //1.11 = 32+11
         #define NC      32 //1.00 = 32+0 // NC is for not connected....
 
+    #elif HARDWARE_MAPPING == NRFMICROV1_1
+        #define BATTERY_TYPE BATT_LIPO
+        #define VBAT_PIN  4 //0.04
+        #define VCC_ENABLE_GPIO 32+9 //1.09
+
+        #define D3      6
+        #define D2      8
+
+        #define D1      15
+        #define D0      17
+        #define D4      20
+        #define C6      13
+        #define D7      24
+        #define E6      9
+        #define B4      10
+        #define B5      38 //1.06  = 32+6
+
+        #define F4      30
+        #define F5      31
+        #define F6      29
+        #define F7      2
+        #define B1      45 //1.13  = 32+13
+        #define B3      3
+        #define B2      28
+        #define B6      43 //1.11 = 32+11
+        #define NC      32 //1.00 = 32+0 // NC is for not connected....
+
+    #elif HARDWARE_MAPPING == NRFMICROV1_1_FLIPPED
+        #define BATTERY_TYPE BATT_LIPO
+        #define VBAT_PIN  4 //0.04
+        #define VCC_ENABLE_GPIO 32+9 //1.09
+
+        #define D3      6
+        #define D2      8
+
+        #define F4      15
+        #define F5      17
+        #define F6      20
+        #define F7      13
+        #define B1      24
+        #define B3      9
+        #define B2      10
+        #define B6      38 //1.06  = 32+6
+
+        #define D1      30
+        #define D0      31
+        #define D4      29
+        #define C6      2
+        #define D7      45 //1.13  = 32+13
+        #define E6      3
+        #define B4      28
+        #define B5      43 //1.11 = 32+11
+
+        #define NC      32 //1.00 = 32+0 // NC is for not connected....
+
     #elif HARDWARE_MAPPING == NRFMICROV1_3
         #define BATTERY_TYPE BATT_LIPO
         #define VBAT_PIN  4 //0.04
