@@ -76,6 +76,16 @@ void setup() {
   batterytimer.begin(keyboardconfig.timerbatteryinterval, batterytimer_callback);
   setupBluetooth();
 
+  //To blink with nRFMicro's onboard LED on start
+  #define LED_PIN (32+10) //1.10  = 32+10
+  pinMode(LED_PIN, OUTPUT);
+  for (int i=0; i<4; i++) { digitalWrite(LED_PIN, i%2 ? LOW : HIGH ); delay(200); }
+
+  //Use this to enable VCC power mosfet
+  #define POWER_PIN 32+9 // 1.09
+  pinMode(POWER_PIN, OUTPUT);
+  digitalWrite(POWER_PIN, 0); // enable power (0-enable, 1-disable)
+
   if(keyboardconfig.ledbacklight)
   {
     setupPWM(BACKLIGHT_LED_PIN);
