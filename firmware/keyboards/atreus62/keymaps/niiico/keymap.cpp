@@ -56,7 +56,7 @@ void setupKeymapBepo() {
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_6,       BP_7,   BP_8,   BP_9,    BP_0,    KC_F12,\
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_PERCENT, BP_4,   BP_5,   BP_6,    BP_MINS, BP_PLUS,\
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_ASTR,    BP_1,   BP_2,   BP_3,    KC_PDOT, BP_SLSH,\
-    _______, _______, _______, KC_PGUP, KC_PGDN, _______, _______,  _______, _______,    KC_0,   KC_0,   KC_HOME, KC_END,  BP_EQL);
+    _______, _______, _______, KC_PGUP, KC_PGDN, _______, _______,  _______, _______,    BP_0,   KM_00,  KC_HOME, KC_END,  BP_EQL);
 
     uint32_t nav[MATRIX_ROWS][MATRIX_COLS] =
     KEYMAP(
@@ -105,7 +105,7 @@ void setupKeymapAzertyBepo() {
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_6,       BP_7,   BP_8,   BP_9,    BP_0,    KC_F12,\
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_PERCENT, BP_4,   BP_5,   BP_6,    BP_MINS, BP_PLUS,\
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_ASTR,    BP_1,   BP_2,   BP_3,    KC_PDOT, BP_SLSH,\
-    _______, _______, _______, KC_PGUP, KC_PGDN, _______, _______,  _______, _______,    KC_0,   KC_0,   KC_HOME, KC_END,  BP_EQL);
+    _______, _______, _______, KC_PGUP, KC_PGDN, _______, _______,  _______, _______,    BP_0,   KM_00,  KC_HOME, KC_END,  BP_EQL);
 
     uint32_t nav[MATRIX_ROWS][MATRIX_COLS] =
     KEYMAP(
@@ -140,6 +140,9 @@ void process_user_macros(uint16_t macroid)
         break;
         case KM_BEPO:
             setupKeymapBepo();
+        break;
+        case KM_00:
+            addStringToQueue("00");
         break;
     }
 }

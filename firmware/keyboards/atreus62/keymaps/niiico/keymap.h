@@ -27,9 +27,9 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #ifndef KEYMAP_H
 #define KEYMAP_H
 
-#define KC_CAP_D MOD(MOD_LSHIFT, KC_D)
 #define KM_AZERTY_BEPO  MC(KC_A)
 #define KM_BEPO         MC(KC_B)
+#define KM_00           MC(KC_C)
 
 #define _AZERTY_BEPO  0
 #define _BEPO         1
@@ -43,6 +43,8 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 
 #define USER_MACRO_FUNCTION   0
 void process_user_macros(uint16_t macroid);
+extern void addStringToQueue(const char* str);
+
 void setupKeymap();
 void setupKeymapBepo();
 void setupKeymapAzertyBepo();
