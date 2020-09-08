@@ -60,11 +60,11 @@ void setupKeymapBepo() {
 
     uint32_t nav[MATRIX_ROWS][MATRIX_COLS] =
     KEYMAP(
-    _______, _______, _______,  _______, _______, _______,                     _______, _______,  _______, _______, _______, _______, \
-    _______, KC_NO,   KC_INS,   KC_HOME, KC_PGUP, KC_PSCR,                     KC_NO,   KC_INS,           KC_HOME,   KC_PGUP, KC_PSCR,   XXXXXXX, \
-    RESET,   KC_NO,   KC_DEL,   KC_END,  KC_PGDN, KC_SLCK,                     KC_NO,   KC_DEL,           KC_END,    KC_PGDN, KC_SLCK,    XXXXXXX, \
-    _______, KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_PAUS,                     KC_NO,   KM_AZERTY_BEPO, KM_BEPO, KC_NO,   KC_PAUS,    XXXXXXX, \
-    _______, _______, _______,  _______, _______, _______, _______,   _______, _______, _______,  _______, _______, _______, _______);
+    _______, _______, _______,  _______, _______, _______,                     _______, _______,    _______, _______, _______, _______, \
+    _______, KC_NO,   KC_INS,   KC_HOME, KC_PGUP, KC_PSCR,                     KC_NO,   KC_INS,     KC_HOME, KC_PGUP, KC_PSCR, XXXXXXX, \
+    RESET,   KC_NO,   KC_DEL,   KC_END,  KC_PGDN, KC_SLCK,                     KC_NO,   KC_DEL,     KC_END,  KC_PGDN, KC_SLCK, XXXXXXX, \
+    _______, KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_PAUS,                     KC_NO,   KM_AZ_BEPO, KM_BEPO, KC_NO,   KC_PAUS, XXXXXXX, \
+    _______, _______, _______,  _______, _______, _______, _______,   _______, _______, _______,        _______, _______, _______, _______);
     /*
      * add the other layers
      */
@@ -109,11 +109,11 @@ void setupKeymapAzertyBepo() {
 
     uint32_t nav[MATRIX_ROWS][MATRIX_COLS] =
     KEYMAP(
-    _______, _______, _______,  _______, _______, _______,                     _______, _______,  _______, _______, _______, _______, \
-    _______, KC_NO,   KC_INS,   KC_HOME, KC_PGUP, KC_PSCR,                     KC_NO,   KC_INS,           KC_HOME,   KC_PGUP, KC_PSCR,   XXXXXXX, \
-    RESET,   KC_NO,   KC_DEL,   KC_END,  KC_PGDN, KC_SLCK,                     KC_NO,   KC_DEL,           KC_END,    KC_PGDN, KC_SLCK,    XXXXXXX, \
-    _______, KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_PAUS,                     KC_NO,   KM_AZERTY_BEPO, KM_BEPO, KC_NO,   KC_PAUS,    XXXXXXX, \
-    _______, _______, _______,  _______, _______, _______, _______,   _______, _______, _______,  _______, _______, _______, _______);
+    _______, _______, _______,  _______, _______, _______,                     _______, _______,    _______, _______, _______, _______, \
+    _______, KC_NO,   KC_INS,   KC_HOME, KC_PGUP, KC_PSCR,                     KC_NO,   KC_INS,     KC_HOME, KC_PGUP, KC_PSCR, XXXXXXX, \
+    RESET,   KC_NO,   KC_DEL,   KC_END,  KC_PGDN, KC_SLCK,                     KC_NO,   KC_DEL,     KC_END,  KC_PGDN, KC_SLCK, XXXXXXX, \
+    _______, KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_PAUS,                     KC_NO,   KM_AZ_BEPO, KM_BEPO, KC_NO,   KC_PAUS, XXXXXXX, \
+    _______, _______, _______,  _______, _______, _______, _______,   _______, _______, _______,    _______, _______, _______, _______);
     /*
      * add the other layers
      */
@@ -135,7 +135,7 @@ void process_user_macros(uint16_t macroid)
 {
     switch ((macroid))
     {
-        case KM_AZERTY_BEPO:
+        case KM_AZ_BEPO:
             setupKeymapAzertyBepo();
         break;
         case KM_BEPO:

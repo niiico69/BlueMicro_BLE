@@ -27,7 +27,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #ifndef KEYMAP_H
 #define KEYMAP_H
 
-#define KM_AZERTY_BEPO  MC(KC_A)
+#define KM_AZ_BEPO      MC(KC_A)
 #define KM_BEPO         MC(KC_B)
 #define KM_00           MC(KC_C)
 
