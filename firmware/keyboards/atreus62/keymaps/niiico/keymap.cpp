@@ -52,11 +52,11 @@ void setupKeymapBepo() {
 
     uint32_t numbr[MATRIX_ROWS][MATRIX_COLS] =
     KEYMAP(
-    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                      KC_F6,      KC_F7,  KC_F8,  KC_F9,   KC_F10,  KC_F11,\
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_6,       BP_7,   BP_8,   BP_9,    BP_0,    KC_F12,\
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_PERCENT, BP_4,   BP_5,   BP_6,    BP_MINS, BP_PLUS,\
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_ASTR,    BP_1,   BP_2,   BP_3,    KC_PDOT, BP_SLSH,\
-    _______, _______, _______, KC_PGUP, KC_PGDN, _______, _______,  _______, _______,    BP_0,   KM_00,  KC_HOME, KC_END,  BP_EQL);
+    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                      KC_F6,   KC_F7,  KC_F8,  KC_F9,   KC_F10,  KC_F11,\
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_6,    BP_7,   BP_8,   BP_9,    BP_0,    KC_F12,\
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_PERC, BP_4,   BP_5,   BP_6,    BP_MINS, BP_PLUS,\
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_ASTR, BP_1,   BP_2,   BP_3,    KC_PDOT, BP_SLSH,\
+    _______, _______, _______, KC_PGUP, KC_PGDN, _______, _______,  _______, _______, BP_0,   KM_00,  KC_HOME, KC_END,  BP_EQL);
 
     uint32_t nav[MATRIX_ROWS][MATRIX_COLS] =
     KEYMAP(
@@ -101,11 +101,11 @@ void setupKeymapAzertyBepo() {
 
     uint32_t numbr[MATRIX_ROWS][MATRIX_COLS] =
     KEYMAP(
-    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                      KC_F6,      KC_F7,  KC_F8,  KC_F9,   KC_F10,  KC_F11,\
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_6,       BP_7,   BP_8,   BP_9,    BP_0,    KC_F12,\
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_PERCENT, BP_4,   BP_5,   BP_6,    BP_MINS, BP_PLUS,\
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    BP_ASTR,    BP_1,   BP_2,   BP_3,    KC_PDOT, BP_SLSH,\
-    _______, _______, _______, KC_PGUP, KC_PGDN, _______, _______,  _______, _______,    BP_0,   KM_00,  KC_HOME, KC_END,  BP_EQL);
+    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                      KC_F6,   KC_F7,  KC_F8,  KC_F9,   KC_F10,  KC_F11,\
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    FR_6,    FR_7,   FR_8,   FR_9,    FR_0,    KC_F12,\
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    FR_PERC, FR_4,   FR_5,   FR_6,    FR_MINS, FR_PLUS,\
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    FR_ASTR, FR_1,   FR_2,   FR_3,    KC_PDOT, FR_SLSH,\
+    _______, _______, _______, KC_PGUP, KC_PGDN, _______, _______,  _______, _______, FR_0,   KM_00,  KC_HOME, KC_END,  FR_EQL);
 
     uint32_t nav[MATRIX_ROWS][MATRIX_COLS] =
     KEYMAP(
