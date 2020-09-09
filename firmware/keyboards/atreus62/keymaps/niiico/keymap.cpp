@@ -40,7 +40,7 @@ void setupKeymapBepo() {
     KC_TAB,  BP_B,       BP_E_ACUTE, BP_P,    BP_O,    BP_E_GRAVE,               BP_DCRC, BP_V,     BP_D,     BP_L,     BP_J,    BP_Z,\
     BP_W,    BP_A,       BP_U,       BP_I,    BP_E,    BP_COMMA,                 BP_C,    BP_T,     BP_S,     BP_R,     BP_N,    BP_M,\
     BP_EGRV, BP_A_GRAVE, BP_Y,       BP_X,    BP_DOT,  BP_K,                     BP_APOS, BP_Q,     BP_G,     BP_H,     BP_F,    BP_CCED,\
-    BP_DLR,  KC_LALT,    KC_LGUI,    KC_UP,   KC_DOWN, KC_BSPC, KC_NO,    KC_NO, KC_SPC,  KC_LEFT,  KC_RGHT,  KC_RGUI,  KC_RALT, KC_NO);
+    BP_DLR,  KC_LALT,    KC_LGUI,    KC_UP,   KC_DOWN, KC_NO, KC_NO,      KC_NO, KC_NO,  KC_LEFT,  KC_RGHT,  KC_RGUI,  KC_RALT, KC_NO);
 
     uint32_t mod_hold[MATRIX_ROWS][MATRIX_COLS] =
     KEYMAP(
@@ -52,11 +52,11 @@ void setupKeymapBepo() {
 
     uint32_t mod_tap[MATRIX_ROWS][MATRIX_COLS] =
     KEYMAP(
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_DEL,      KC_ENT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO );
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_BSPC, KC_DEL,    KC_ENT, KC_SPC, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO );
     
     uint32_t numbr[MATRIX_ROWS][MATRIX_COLS] =
     KEYMAP(
