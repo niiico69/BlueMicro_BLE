@@ -32,11 +32,11 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #define KM_00           MC(KC_C)
 
 #define _AZERTY_BEPO  0
-#define _BEPO         1
-#define _NUMBR        2
-#define _NAV          3
+#define _BEPO         0
+#define _NUMBR        1
+#define _NAV          2
 
-#define NUM_LAYERS 4
+#define NUM_LAYERS 3
 
 #define NUMBR LAYER_1
 #define NAV   LAYER_2
@@ -44,6 +44,8 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #define USER_MACRO_FUNCTION   0
 void process_user_macros(uint16_t macroid);
 extern void addStringToQueue(const char* str);
+extern void addKeycodeToQueue(const uint16_t keycode);
+
 
 void setupKeymap();
 void setupKeymapBepo();
