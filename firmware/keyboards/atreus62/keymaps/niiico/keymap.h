@@ -31,7 +31,6 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #define KM_BEPO         MC(KC_B)
 #define KM_00           MC(KC_C)
 
-#define _AZERTY_BEPO  0
 #define _BEPO         0
 #define _NUMBR        1
 #define _NAV          2
