@@ -1,5 +1,5 @@
 /*
-Copyright 2020 <Pierre Constantineau>
+Copyright 2018 <Pierre Constantineau>
 
 3-Clause BSD License
 
@@ -17,27 +17,24 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
-#ifndef HARDWARE_CONFIG_H
-#define HARDWARE_CONFIG_H
-#include "hardware_variants.h"
-#include "breakout_mapping.h"
+#include <stdint.h>
+#include "hid_keycodes.h"
+#include "keyboard_config.h"
+#include "advanced_keycodes.h"
+#include "Key.h"
+#include <array>
 
-/* HARDWARE DEFINITION*/
-#define ARDUINO_NRF52840_PCA10056 1
-#define HARDWARE_MAPPING  NRFMICROV1_1_FLIPPED
+#ifndef KEYMAP_H
+#define KEYMAP_H
 
-/* HARDWARE DEFINITION*/
-/* key matrix size */
-#define MATRIX_ROWS 4
-#define MATRIX_COLS 8
+#define _QWERTY         0
 
-/* key matrix pins */
-//#define MATRIX_ROW_PINS { B4, E6, D7, D4 }
-//#define MATRIX_COL_PINS { B6, B2, B3, B1, F7, F6, F5, F4 }
-#define MATRIX_ROW_PINS { 28, 3, 45, 29 }
-#define MATRIX_COL_PINS { 38, 10, 9, 24, 13, 20, 17, 15 }
+#define NUM_LAYERS 1
 
-/* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION COL2ROW
-    
-#endif /* HARDWARE_CONFIG_H */
+#define NUMBR LAYER_1
+
+
+void setupKeymap();
+extern std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix;
+
+#endif
