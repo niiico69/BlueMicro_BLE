@@ -68,7 +68,7 @@ void setupBluetooth(void)
   Bluefruit.setRssiCallback(rssi_changed_callback);
   //********Bluefruit.setConnInterval(9, 12);                                 // 0.10.1: not needed for master...
   Bluefruit.Periph.setConnInterval(6, 12); // 7.5 - 15 ms
-
+  Bluefruit.setRssiCallback(rssi_changed_callback);
   // Configure and Start Device Information Service
   bledis.setManufacturer(MANUFACTURER_NAME);                                  // Defined in keyboard_config.h
   bledis.setModel(DEVICE_MODEL);                                              // Defined in keyboard_config.h
@@ -229,7 +229,11 @@ void rssi_changed_callback(uint16_t conn_hdl, int8_t rssi)
   if (conn_hdl == keyboardstate.conn_handle_cccd)
   {
     keyboardstate.rssi_cccd = rssi;
-  }  
+  } 
+
+  (void) conn_hdl;
+  keyboardstate.rssipairs = std::make_pair(conn_hdl, rssi);
+ // keyboardstate.rssi=rssi;
      
 }
 
@@ -275,9 +279,11 @@ void cccd_callback(uint16_t conn_hdl, BLECharacteristic* chr, uint16_t cccd_valu
   BLEConnection* connection = Bluefruit.Connection(conn_hdl);
   connection->getPeerName(peer_name, sizeof(peer_name));
   LOG_LV1("CENTRL","Connected to %i %s",conn_hdl,peer_name );
-  connection->monitorRssi(6);
+
+  connection->monitorRssi(10);
   strcpy (keyboardstate.peer_name_cccd,peer_name);
   keyboardstate.conn_handle_cccd = conn_hdl;
+
     LOG_LV1("CBCCCD","notify_callback: %i " ,cccd_value);
     
     // Check the characteristic this CCCD update is associated with in case
@@ -334,15 +340,15 @@ void scan_callback(ble_gap_evt_adv_report_t* report)
 }
 
 /**************************************************************************************************************************/
-// This callback is called when the master connects to a slave
+// This callback is called when the master connects to the computer
 /**************************************************************************************************************************/
 void prph_connect_callback(uint16_t conn_handle)
-{
+{ 
 char peer_name[32] = { 0 };
 BLEConnection* connection = Bluefruit.Connection(conn_handle);
 connection->getPeerName(peer_name, sizeof(peer_name));
 LOG_LV1("PRPH","Connected to %i %s",conn_handle,peer_name  );
-connection->monitorRssi(6);
+connection->monitorRssi(10);
 strcpy (keyboardstate.peer_name_prph,peer_name);
 keyboardstate.conn_handle_prph = conn_handle;
 
@@ -376,9 +382,9 @@ void cent_connect_callback(uint16_t conn_handle)
   BLEConnection* connection = Bluefruit.Connection(conn_handle);
   connection->getPeerName(peer_name, sizeof(peer_name));
   LOG_LV1("CENTRL","Connected to %i %s",conn_handle,peer_name );
-  connection->monitorRssi(6);
-strcpy (keyboardstate.peer_name_cent,peer_name);
-keyboardstate.conn_handle_cent = conn_handle;
+  connection->monitorRssi(10);
+  strcpy (keyboardstate.peer_name_cent,peer_name);
+  keyboardstate.conn_handle_cent = conn_handle;
 
   if (KBLinkClientService.discover(conn_handle )) // validating that KBLink service is available to this connection
   {
@@ -427,6 +433,7 @@ void set_keyboard_led(uint16_t conn_handle, uint8_t led_bitmap)
   (void) conn_handle;
   // light up Red Led if any bits is set
   // RED LED is on P0.17 and is not being used on the standard BlueMicro
+  keyboardstate.statusled = led_bitmap;
   if ( led_bitmap )
   {
     ledOn( LED_RED );
@@ -481,7 +488,7 @@ void sendKeys(uint8_t currentReport[8])
           Linkdata.command = 0;
           Linkdata.timesync = 0;
           Linkdata.specialkeycode = 0;
-          Linkdata.batterylevel = batterymonitor.vbat_per;
+          Linkdata.batterylevel = keyboardstate.vbat_per;
           LOG_LV1("KB-P2C"," KBLinkChar_Buffer.notify sendKeys sending %i [1] %i",sizeof(Linkdata),Linkdata.report[1]);
           KBLinkChar_Buffer.notify(&Linkdata, sizeof(Linkdata));    
     #endif
@@ -533,7 +540,7 @@ void sendMouseKey(uint16_t keycode)
           Linkdata.command = 0;
           Linkdata.timesync = 0;
           Linkdata.specialkeycode = keycode;
-          Linkdata.batterylevel = batterymonitor.vbat_per;
+          Linkdata.batterylevel = keyboardstate.vbat_per;
           LOG_LV1("KB-P2C"," KBLinkChar_Buffer.notify sendMouseKey");
           KBLinkChar_Buffer.notify(&Linkdata, sizeof(Linkdata));    
     #endif
@@ -602,7 +609,7 @@ uint16_t usagecode = 0;
           Linkdata.command = 0;
           Linkdata.timesync = 0;
           Linkdata.specialkeycode = keycode;
-          Linkdata.batterylevel = batterymonitor.vbat_per;
+          Linkdata.batterylevel = keyboardstate.vbat_per;
           LOG_LV1("KB-P2C"," KBLinkChar_Buffer.notify sendMediaKey");
           KBLinkChar_Buffer.notify(&Linkdata, sizeof(Linkdata));    
     #endif

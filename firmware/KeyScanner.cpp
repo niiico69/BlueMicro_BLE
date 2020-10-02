@@ -91,6 +91,7 @@ void KeyScanner::release(unsigned long currentMillis, const int& row, const int&
 void KeyScanner::updateRemoteLayer(uint8_t data)
 {
     remoteLayer = data;
+    
 }
 
 /**************************************************************************************************************************/
@@ -174,7 +175,7 @@ void KeyScanner::updateBuffer()
 process_user_layers(detectedlayerkeys);
 
 uint8_t layer = getlayer(detectedlayerkeys);
-
+effectiveLayer = detectedlayerkeys;
     for(int row = 0; row < MATRIX_ROWS; ++row) {
         for (auto& key : matrix[row]) 
         {
@@ -424,6 +425,7 @@ uint16_t KeyScanner::consumer = 0;
 uint16_t KeyScanner::mouse = 0;
 uint16_t KeyScanner::special_key = 0;
 uint16_t KeyScanner::remoteLayer = 0;
+uint16_t KeyScanner::effectiveLayer = 0;
 uint16_t KeyScanner::remotespecialkeycode = 0;
 
 uint16_t KeyScanner::oneshotLayer = 0;

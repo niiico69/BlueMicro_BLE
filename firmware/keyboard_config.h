@@ -19,7 +19,9 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 */
 #ifndef KEYBOARD_CONFIG_H
 #define KEYBOARD_CONFIG_H
-#include "hardware_config.h"
+#include "hardware_variants.h"
+#define HARDWARE_MAPPING  NRFMICROV1_3
+#include "breakout_mapping.h"
 
 
 #define KEYBOARD_SIDE RIGHT

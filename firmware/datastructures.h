@@ -58,6 +58,8 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
         char peer_name_cccd[32];
         uint16_t conn_handle_cccd;
         int8_t rssi_cccd;
+        std::pair<uint16_t, int8_t> rssipairs;
+
     } DynamicState;
 
     #endif 

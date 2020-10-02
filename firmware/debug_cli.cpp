@@ -183,7 +183,7 @@ void matrix_key_test(bool singlekey)
 /**************************************************************************************************************************/
 void gpiotester(){
     keyscantimer.stop();
-  batterytimer.stop();
+  //batterytimer.stop();
     #ifdef NRF52840_XXAA
     // below tests all nrf52840 GPIOs except 32kHz xtal and reset
     #ifdef NICENANO // 14 and 16 are connected to 18 - reset line
@@ -261,7 +261,7 @@ Serial.println("i\tGPIO\tGPIO\tFloat \tP.Up \tP.Down\tstatus");
     
   }
     keyscantimer.start();
-  batterytimer.start();
+  //batterytimer.start();
 }
 /**************************************************************************************************************************/
 void handleSerial() {
@@ -359,32 +359,32 @@ void handleSerial() {
                 Serial.println("");
       break;
       case 'p':
-            intval = batterymonitor.vbat_per;
+            intval = keyboardstate.vbat_per;
 
-      switch (batterymonitor.batt_type)
+      switch (keyboardstate.batt_type)
       {
         case BATT_UNKNOWN:
-            snprintf (buffer, sizeof(buffer), "VDD = %.0f mV, VBatt = %.0f mV", batterymonitor.vbat_vdd*1.0, batterymonitor.vbat_mv*1.0);
+            snprintf (buffer, sizeof(buffer), "VDD = %.0f mV, VBatt = %.0f mV", keyboardstate.vbat_vdd*1.0, keyboardstate.vbat_mv*1.0);
         break;
         case BATT_CR2032:
             if (intval>99)
             {
-              snprintf (buffer, sizeof(buffer), "VDD = %.0f mV (%4d %%)", batterymonitor.vbat_mv*1.0, intval);
+              snprintf (buffer, sizeof(buffer), "VDD = %.0f mV (%4d %%)", keyboardstate.vbat_mv*1.0, intval);
             }
             else
             {
-              snprintf (buffer, sizeof(buffer), "VDD = %.0f mV (%3d %%)", batterymonitor.vbat_mv*1.0, intval);
+              snprintf (buffer, sizeof(buffer), "VDD = %.0f mV (%3d %%)", keyboardstate.vbat_mv*1.0, intval);
             }
             
         break;
         case BATT_LIPO:
             if (intval>99)
             {
-              sprintf (buffer, "LIPO = %.0f mV (%4d %%)", batterymonitor.vbat_mv*1.0, intval);
+              sprintf (buffer, "LIPO = %.0f mV (%4d %%)", keyboardstate.vbat_mv*1.0, intval);
             }
             else
             {
-              sprintf (buffer, "LIPO = %.0f mV (%3d %%)", batterymonitor.vbat_mv*1.0, intval);
+              sprintf (buffer, "LIPO = %.0f mV (%3d %%)", keyboardstate.vbat_mv*1.0, intval);
             }   
         break;
       }
@@ -395,21 +395,21 @@ void handleSerial() {
       break;
      case 'm':
             keyscantimer.stop();
-            batterytimer.stop();
+            //batterytimer.stop();
             matrix_key_init(false);
             matrix_key_test(false);
             matrix_key_end(false);
             keyscantimer.start();
-            batterytimer.start();
+            //batterytimer.start();
       break;
      case 'k':
             keyscantimer.stop();
-            batterytimer.stop();
+            //batterytimer.stop();
             matrix_key_init(true);
             matrix_key_test(true);
             matrix_key_end(true);
             keyscantimer.start();
-            batterytimer.start();
+            //batterytimer.start();
       break;
     }
  }

@@ -60,6 +60,7 @@ class KeyScanner {
         static uint16_t consumer;
         static uint16_t mouse;
         static uint16_t localLayer;
+        static uint16_t effectiveLayer;
         static uint16_t special_key;
        // static uint8_t layerMode;
         static uint16_t remotespecialkeycode;
@@ -86,7 +87,7 @@ class KeyScanner {
         static uint16_t remoteLayer;
         
         static uint8_t remoteMod;
-         static uint8_t currentMod;
+        static uint8_t currentMod;
 
         static std::vector<uint16_t> activeKeys; 
         static std::vector<uint16_t> macroBuffer; 
